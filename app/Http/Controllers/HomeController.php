@@ -26,4 +26,19 @@ class HomeController extends Controller
 
         return view('pages.details', compact('movie'));
     }
+
+    public function create(){
+
+        return view('pages.create');
+    }
+
+    public function store(Request $request){
+
+        $request -> validate([
+            'title' => 'required|string|max:255',
+            'film_director' => 'required|string|max:255',
+        ]);
+
+        
+    }
 }
