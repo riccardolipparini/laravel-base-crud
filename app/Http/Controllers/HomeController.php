@@ -22,8 +22,8 @@ class HomeController extends Controller
 
         $movie = Movie::findOrFail($id);
 
-        dd($id, $movie);
+        
 
-        return view('pages.details');
+        return view('pages.details', compact('movie'));
     }
 }
