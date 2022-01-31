@@ -10,7 +10,20 @@ class HomeController extends Controller
 {
     public function home(){
 
-        return view('pages.home');
+        $movies = Movie::all();
 
+
+
+        return view('pages.home', compact('movies'));
+
+    }
+
+    public function details($id){
+
+        $movie = Movie::findOrFail($id);
+
+        dd($id, $movie);
+
+        return view('pages.details');
     }
 }
